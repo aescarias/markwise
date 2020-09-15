@@ -16,7 +16,7 @@ eggs/
 .eggs/
 .idea/
 .idea
-lib/
+marquee/
 lib64/
 parts/
 sdist/
