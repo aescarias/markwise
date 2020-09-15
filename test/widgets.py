@@ -1,10 +1,8 @@
-class HeadingLevelTooHigh(Exception):
-    def __str__(self):
-        return "Heading level must be lower or equal to 6."
+from exceptions import HeadingLevelTooHigh
 
 class Header:
     def __init__(self, level: int, text: str):
-        self.level = level
+        self.level = level if level != 0 else 1
         self.text = text
 
     def __repr__(self):
