@@ -3,14 +3,20 @@ class Widget:
 
 
 class Text(Widget):
-    def __init__(self, text: str, bold=False, italic=False):
+    def __init__(self, text: str, bold=False, italic=False, strikeout=False):
         self.text = text
         self.bold = bold
         self.italic = italic
+        self.strikeout = strikeout
 
     def __repr__(self):
         a = (self.italic * 1 + self.bold * 2) * '*'
-        return f"{a}{self.text}{a}"
+        b = "~~"
+        
+        if strikeout:
+            return f"{b}{self.text}{b}"
+        else:
+            return f"{a}{self.text}{a}"
 
 
 class RawText(Widget):
