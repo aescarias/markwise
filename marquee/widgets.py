@@ -12,7 +12,7 @@ class Text(Widget):
     def __repr__(self):
         a = (self.italic * 1 + self.bold * 2) * '*'
         b = "~~"
-        
+
         if self.strikeout is None:
             return f"{b}{self.text}{b}"
         else:
@@ -98,3 +98,11 @@ class CodeBlock:
 
     def __repr__(self):
         return f"""```{self.lang if self.lang else ""}\n{self.text}\n```"""
+
+
+class Line:
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        return "-" * 60

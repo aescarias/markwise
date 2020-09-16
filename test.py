@@ -13,6 +13,8 @@ my_md.add_l([
 
     BlockQuote(Text('"Self-doubt is the beginning of defeat"')),
 
+    Line(),
+
     WidgetList([Mark(Text("Ordered List")), Indent(Mark(Link("https://google.com", Text("Search", bold=True))))]),
 
     WidgetList([NumberMark(Text("Unordered")),
