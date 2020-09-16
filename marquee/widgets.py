@@ -13,7 +13,7 @@ class Text(Widget):
         a = (self.italic * 1 + self.bold * 2) * '*'
         b = "~~"
         
-        if self.strikeout is not None:
+        if self.strikeout is None:
             return f"{b}{self.text}{b}"
         else:
             return f"{a}{self.text}{a}"
@@ -58,7 +58,7 @@ class Mark(Widget):
         self.child = child
 
     def __repr__(self):
-        return f"* {self.child}"
+        return f"- {self.child}"
 
 
 class NumberMark(Widget):
