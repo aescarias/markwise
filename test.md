@@ -15,3 +15,7 @@ Github: [A Link](https://github.com/angelCarias/marquee)
 
 * Unordered
 * > *List*
+
+```python
+greet = lambda name: 'hello' + name
+```

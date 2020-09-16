@@ -17,6 +17,8 @@ my_md.add_l([
 
     UnorderedList([Text("Unordered"), BlockQuote(Text("List", italic=True))]),
 
+    CodeBlock(RawText("greet = lambda name: 'hello' + name"), lang="python")
+
 ])
 
 my_md.write("test.md")

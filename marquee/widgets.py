@@ -13,6 +13,14 @@ class Text(Widget):
         return f"{a}{self.text}{a}"
 
 
+class RawText(Widget):
+    def __init__(self, text: str):
+        self.text = text
+
+    def __repr__(self):
+        return self.text
+
+
 class Header(Widget):
     def __init__(self, size: int, text: Widget):
         self.size = size
@@ -52,4 +60,17 @@ class OrderedList(Widget):
         self.widgets = widgets
 
     def __repr__(self):
-        return "\n".join(f"{i+1}. " + repr(a) for i, a in enumerate(self.widgets))
+        return "\n".join(f"{i + 1}. " + repr(a) for i, a in enumerate(self.widgets))
+
+
+class CodeBlock:
+    def __init__(self, text: RawText, lang=None):
+        self.highlighters = ["py", "python", "json", "shell"]
+        self.text = text
+        self.lang = lang
+
+        if self.lang not in self.highlighters:
+            self.lang = None
+
+    def __repr__(self):
+        return f"""```{self.lang if self.lang else ""}\n{self.text}\n```"""

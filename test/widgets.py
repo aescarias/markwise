@@ -1,7 +1,8 @@
-from exceptions import HeadingLevelTooHigh
+from .exceptions import HeadingLevelTooHigh
+
 
 class CodeBlock:
-    def __init__(self, text: str, syntax_highlight = None):
+    def __init__(self, text: str, syntax_highlight=None):
         self.highlighters = ["py", "python", "json", "shell"]
         self.text = text
         self.syntax_highlight = syntax_highlight
@@ -11,6 +12,7 @@ class CodeBlock:
 
     def __repr__(self):
         return f"""```{self.syntax_highlight}\n{self.text}```"""
+
 
 class Header:
     def __init__(self, level: int, text: str):
