@@ -90,9 +90,9 @@ class Indent(Widget):
         return f"{' ' * self.amount * 3}{self.child}"
 
 
-class CodeBlock:
+class CodeBlock(Widget):
     def __init__(self, text: RawText, lang=None):
-        self.highlighters = ["py", "python", "json", "shell"]
+        self.highlighters = ["py", "python", "json", "shell", "bash", "js", "html", "css", "asciidoc"]
         self.text = text
         self.lang = lang
 
