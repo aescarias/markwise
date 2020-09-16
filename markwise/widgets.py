@@ -27,7 +27,7 @@ class RawText(Widget):
         return self.text
 
 
-class Header(Widget):
+class Heading(Widget):
     def __init__(self, size: int, text: Widget):
         self.size = size
         self.text = text
