@@ -1,9 +1,9 @@
-from marquee import *
+from markwise import *
 
 my_md = MarkDown()
 
 my_md.add_l([
-    Header(2, Text("Welcome to Marquee!")),
+    Header(2, Text("Welcome to Markwise!")),
     Header(4, Text("This is a markdown wrapper.", italic=True)),
 
     Text("This is a bold text", bold=True),
