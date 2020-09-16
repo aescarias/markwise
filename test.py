@@ -13,9 +13,11 @@ my_md.add_l([
 
     BlockQuote(Text('"Self-doubt is the beginning of defeat"')),
 
-    OrderedList([Text("Ordered List"), Link("https://google.com", Text("Search", bold=True))]),
+    WidgetList([Mark(Text("Ordered List")), Indent(Mark(Link("https://google.com", Text("Search", bold=True))))]),
 
-    UnorderedList([Text("Unordered"), BlockQuote(Text("List", italic=True))]),
+    WidgetList([NumberMark(Text("Unordered")),
+                NumberMark(Text("Another Unordered")),
+                Indent(Mark(BlockQuote(Text("List", italic=True))))]),
 
     CodeBlock(RawText("greet = lambda name: 'hello' + name"), lang="python")
 

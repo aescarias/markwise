@@ -13,7 +13,7 @@ class Text(Widget):
         a = (self.italic * 1 + self.bold * 2) * '*'
         b = "~~"
         
-        if strikeout:
+        if self.strikeout is not None:
             return f"{b}{self.text}{b}"
         else:
             return f"{a}{self.text}{a}"
@@ -53,20 +53,38 @@ class BlockQuote(Widget):
         return f"> {self.text}"
 
 
-class UnorderedList(Widget):
-    def __init__(self, widgets):
-        self.widgets = widgets
+class Mark(Widget):
+    def __init__(self, child: Widget):
+        self.child = child
 
     def __repr__(self):
-        return "\n".join("* " + repr(a) for a in self.widgets)
+        return f"* {self.child}"
 
 
-class OrderedList(Widget):
-    def __init__(self, widgets):
-        self.widgets = widgets
+class NumberMark(Widget):
+    def __init__(self, child: Widget, number: int = 1):
+        self.number = number
+        self.child = child
 
     def __repr__(self):
-        return "\n".join(f"{i + 1}. " + repr(a) for i, a in enumerate(self.widgets))
+        return f"{self.number}. {self.child}"
+
+
+class WidgetList(Widget):
+    def __init__(self, children):
+        self.children = children
+
+    def __repr__(self):
+        return "\n".join(str(a) for a in self.children)
+
+
+class Indent(Widget):
+    def __init__(self, child, amount: int = 1):
+        self.child = child
+        self.amount = amount
+
+    def __repr__(self):
+        return f"{' ' * self.amount * 3}{self.child}"
 
 
 class CodeBlock:

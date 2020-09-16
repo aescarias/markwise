@@ -10,11 +10,12 @@ Github: [A Link](https://github.com/angelCarias/marquee)
 
 > "Self-doubt is the beginning of defeat"
 
-1. Ordered List
-2. [**Search**](https://google.com)
+* Ordered List
+   * [**Search**](https://google.com)
 
-* Unordered
-* > *List*
+1. Unordered
+1. Another Unordered
+   * > *List*
 
 ```python
 greet = lambda name: 'hello' + name
