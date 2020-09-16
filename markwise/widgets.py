@@ -36,6 +36,9 @@ class Heading(Widget):
         return f"{self.size * '#'} {self.text}"
 
 
+Header = Heading
+
+
 class Link(Widget):
     def __init__(self, link: str, text: Widget):
         self.link = link
