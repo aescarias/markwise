@@ -37,3 +37,19 @@ class BlockQuote(Widget):
 
     def __repr__(self):
         return f"> {self.text}"
+
+
+class UnorderedList(Widget):
+    def __init__(self, widgets):
+        self.widgets = widgets
+
+    def __repr__(self):
+        return "\n".join("* " + repr(a) for a in self.widgets)
+
+
+class OrderedList(Widget):
+    def __init__(self, widgets):
+        self.widgets = widgets
+
+    def __repr__(self):
+        return "\n".join(f"{i+1}. " + repr(a) for i, a in enumerate(self.widgets))

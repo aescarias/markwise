@@ -9,3 +9,9 @@
 Github: [A Link](https://github.com/angelCarias/marquee)
 
 > "Self-doubt is the beginning of defeat"
+
+1. Ordered List
+2. [**Search**](https://google.com)
+
+* Unordered
+* > *List*
