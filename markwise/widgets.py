@@ -113,13 +113,13 @@ class Line:
 
 class Image(Widget):
     def __init__(self, url: str, description: str):
-    	self.url = url
-	self.description = description
+        self.url = url
+        self.description = description
     
     def __repr__(self):
-    	return f"![{self.description}]({self.url})"
+        return f"![{self.description}]({self.url})"
 
 
 class HorizontalRuler(Widget):
     def __repr__(self):
-	return "***"
+        return "***"
