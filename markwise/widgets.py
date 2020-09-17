@@ -104,8 +104,22 @@ class CodeBlock(Widget):
 
 
 class Line:
-    def __init__(self):
-        pass
+    def __init__(self, length):
+        self.length = length
 
     def __repr__(self):
-        return "-" * 60
+        return "-" * self.length
+
+
+class Image(Widget):
+	def __init__(self, url: str, description: str):
+		self.url = url
+		self.description = description
+	
+	def __repr__(self):
+		return f"![{self.description}]({self.url})"
+
+
+class HorizontalRuler(Widget):
+	def __repr__(self):
+		return "***"
