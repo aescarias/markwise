@@ -1,3 +1,6 @@
+from .md2html import md2html
+
+
 class MarkDown:
     def __init__(self):
         self.widgets = []
@@ -20,3 +23,6 @@ class MarkDown:
         self.widgets.append(o)
         self.update()
         return self
+
+    def to_html(self, file=None):
+        return md2html(self, file)

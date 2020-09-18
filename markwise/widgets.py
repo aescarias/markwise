@@ -104,7 +104,7 @@ class CodeBlock(Widget):
 
 
 class Line:
-    def __init__(self, length: int=60):
+    def __init__(self, length: int = 60):
         self.length = length
 
     def __repr__(self):
@@ -115,7 +115,7 @@ class Image(Widget):
     def __init__(self, url: str, description: str):
         self.url = url
         self.description = description
-    
+
     def __repr__(self):
         return f"![{self.description}]({self.url})"
 
