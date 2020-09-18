@@ -26,3 +26,5 @@ my_md.add_l([
 ])
 
 my_md.write("test.md")
+
+md2html(my_md, "test.html")

@@ -7,7 +7,7 @@ with open('markwise/__init__.py') as f:
 
 print(version)
 
-requirements = []
+requirements = ["markdown~=3.2.2"]
 
 with open("README.md", "r") as f:
     readme = f.read()
@@ -22,5 +22,5 @@ setup(name="markwise",
       install_requires=requirements,
       python_requires=">=3.6",
       url="https://github.com/angelCarias/markwise",
-      download_url="https://github.com/angelCarias/markwise/archive/v0.1.2.tar.gz"
+      download_url="https://github.com/angelCarias/markwise/archive/v0.2.0.tar.gz"
       )
