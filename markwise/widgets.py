@@ -104,7 +104,7 @@ class CodeBlock(Widget):
 
 
 class Line:
-    def __init__(self, length=60):
+    def __init__(self, length: int=60):
         self.length = length
 
     def __repr__(self):
