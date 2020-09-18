@@ -12,28 +12,23 @@ class Text(Widget):
     def __repr__(self):
         a = (self.italic * 1 + self.bold * 2) * '*'
         b = "~~"
-
-        if self.strikeout is None:
-            return f"{b}{self.text}{b}"
+        
+        if (self.bold + self.italic + self.strikeout != 0):
+            if self.strikeout is None:
+                return f"{b}{self.text}{b}"
+            else:
+                return f"{a}{self.text}{a}"
         else:
-            return f"{a}{self.text}{a}"
-
-
-class RawText(Widget):
-    def __init__(self, text: str):
-        self.text = text
-
-    def __repr__(self):
-        return self.text
+            return self.text
 
 
 class Heading(Widget):
-    def __init__(self, size: int, text: Widget):
-        self.size = size
+    def __init__(self, level: int, text: Widget):
+        self.level = level
         self.text = text
 
     def __repr__(self):
-        return f"{self.size * '#'} {self.text}"
+        return f"{self.level * '#'} {self.text}"
 
 
 Header = Heading
@@ -91,7 +86,7 @@ class Indent(Widget):
 
 
 class CodeBlock(Widget):
-    def __init__(self, text: RawText, lang=None):
+    def __init__(self, text: Text, lang=None):
         self.highlighters = ["py", "python", "json", "shell", "bash", "js", "html", "css", "asciidoc"]
         self.text = text
         self.lang = lang
