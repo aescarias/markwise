@@ -1,6 +1,7 @@
-from .obj import *
-from .widgets import *
-from .md2html import *
+from markdown.obj import *
+from markdown.widgets import *
+from markdown.md2html import *
+from json.classes import *
 
 __title__ = 'markwise'
 __author__ = 'SnowballSH, Tekgar'
