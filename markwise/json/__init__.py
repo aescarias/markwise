@@ -1,5 +1,4 @@
-from .markdown import *
-from .json import *
+from .classes import *
 
 __title__ = 'markwise'
 __author__ = 'SnowballSH, Tekgar'
